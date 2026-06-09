@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Design</title>
+    <style>
+
+        
+        *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+
+.header{
+    width:100%;
+    background:#1e90ff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+}
+
+.logo img{
+    width:180px;
+    height:60px;
+}
+
+nav ul li {
+    position: relative;
+    /* text-decoration: none; */
+    list-style: none;
+    display: inline;
+    margin-right: 30px;
+    /* margin-top: 50px; */
+    color: white;
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Dropdown Menu */
+.submenu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    background: white;
+    min-width: 200px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.submenu li{
+    width: 100%;
+}
+
+.submenu li a{
+    display: block;
+    padding: 12px;
+    color: black;
+    text-decoration: none;
+}
+
+.submenu li a:hover{
+    background: dodgerblue;
+    color: white;
+}
+
+/* Hover pe open */
+.dropdown:hover .submenu{
+    display: block;
+}
+
+.search-box{
+    display: flex;
+    align-items: stretch;   /* important fix */
+}
+
+.search-box input{
+    padding: 10px;
+    border: none;
+    outline: none;
+    width: 200px;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+}
+
+.search-box button{
+    padding: 10px 15px;
+    border: none;
+    background: #333;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.search-box button:hover{
+    background:black;
+}
+.slider{
+    width:90%;
+    height:650px;
+    margin:10px auto;
+    overflow:hidden;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(0,0,0,0.3);
+}
+
+.slides{
+    width:400%;
+    height:100%;
+    display:flex;
+    animation:slide 16s infinite;
+}
+
+.slides img{
+    width:25%;
+    height:100%;
+    object-fit:cover;
+}
+
+@keyframes slide{
+
+    0%,20%{
+        transform:translateX(0);
+    }
+
+    25%,45%{
+        transform:translateX(-25%);
+    }
+
+    50%,70%{
+        transform:translateX(-50%);
+    }
+
+    75%,95%{
+        transform:translateX(-75%);
+    }
+
+    100%{
+        transform:translateX(0);
+    }
+  
+}
+    .products{
+    width:90%;
+    margin:50px auto;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+
+}
+
+.heading{
+    text-align: left;
+    font-size: 32px;
+    margin: 10px 90px;
+    color: #333;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.card{
+    width:200px;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    text-align:center;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.card h3{
+    margin:15px 0 10px;
+}
+
+.price{
+    color:#1e90ff;
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.card p{
+    padding:0 15px;
+    margin-bottom:15px;
+    color:#555;
+}
+
+.card button{
+    margin-bottom:20px;
+    padding:10px 25px;
+    border:none;
+    background:#1e90ff;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.card button:hover{
+    background:#0066cc;
+}
+.products{
+    display: flex;
+    gap: 20px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    flex-wrap: nowrap; /* cards next line me nahi jayenge */
+
+    padding: 20px;
+}
+
+/* Card Width */
+.card{
+    min-width: 250px;
+    flex-shrink: 0;
+}
+
+
+.footer{
+    background:#111;
+    color:white;
+    margin-top:50px;
+}
+
+.footer-container{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    padding:50px 10%;
+    gap:30px;
+}
+
+.footer-box{
+    flex:1;
+    min-width:220px;
+}
+
+.footer-box h2,
+.footer-box h3{
+    margin-bottom:15px;
+    color:dodgerblue;
+}
+
+.footer-box p{
+    line-height:1.8;
+}
+
+.footer-box ul{
+    list-style:none;
+}
+
+.footer-box ul li{
+    margin-bottom:10px;
+}
+
+.footer-box ul li a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+.footer-box ul li a:hover{
+    color:dodgerblue;
+    padding-left:5px;
+}
+
+.social-icons{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.social-icons a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+.social-icons a:hover{
+    color:dodgerblue;
+}
+.heading{
+    text-align: center;
+    font-size: 32px;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+/* horizontal scroll section */
+.scroll-container{
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+
+/* scrollbar style */
+.scroll-container::-webkit-scrollbar{
+    height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb{
+    background: gray;
+    border-radius: 10px;
+}
+
+/* card style */
+.card{
+    width:400px;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    text-align:center;
+    transition:0.4s;
+}
+
+.card img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.price{
+    color: green;
+    font-weight: bold;
+}
+
+button{
+    background: black;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover{
+    background: #333;
+}
+
+.footer-bottom{
+    text-align:center;
+    padding:20px;
+    border-top:1px solid #333;
+    background:#0a0a0a;
+}
+
+.footer-bottom p{
+    font-size:14px;
+}
+
+@media(max-width:768px){
+    .footer-container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .social-icons{
+        align-items:center;
+    }
+}
+    </style>
+</head>
+<body>
+
+<header class="header">
+
+    <!-- Logo -->
+    <div class="logo">
+        <img src="flipcart.png.jpeg" alt="Logo">
+    </div>
+
+    <!-- Navbar -->
+   <nav>
+    <ul>
+
+        <li class="dropdown">
+            <a href="#">Home</a>
+            <ul class="submenu">
+                <li><a href="#">Latest News</a></li>
+                <li><a href="#">Featured Products</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <a href="#">About</a>
+            <ul class="submenu">
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Our Team</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <a href="#">Services</a>
+            <ul class="submenu">
+                <li><a href="#">Sports Equipment</a></li>
+                <li><a href="#">Training</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <a href="#">Gallery</a>
+            <ul class="submenu">
+                <li><a href="#">Photos</a></li>
+                <li><a href="#">Videos</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <a href="#">Contact</a>
+            <ul class="submenu">
+                <li><a href="#">Email Us</a></li>
+                <li><a href="#">Location</a></li>
+            </ul>
+        </li>
+
+    </ul>
+</nav>
+
+    <!-- Search Bar -->
+    <div class="search-box">
+        <input type="text" placeholder="Search Here...">
+        <button>Search</button>
+    </div>
+
+</header>
+
+    <section class="slider">
+
+    <div class="slides">
+        <img src="cricket1.jpg" alt="Watch 1">
+        <img src="cricket2.jpg" alt="Watch 2">
+        <img src="cricket3.jpg" alt="Watch 3">
+        <img src="cricket4.JPG" alt="Watch 4">
+    </div>
+
+</section>
+<h2 class="heading">Cricket Items</h2>
+
+        <section class="products">
+
+    <div class="card">
+        <img src="cricket3.jpg" alt="Watch">
+        <h3>Rolex Submariner</h3>
+        <p class="price">Rs. 45,000</p>
+        <p>Premium stainless steel luxury watch with elegant design.</p>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="cricket4.JPG" alt="Watch">
+        <h3>Omega Classic</h3>
+        <p class="price">Rs. 38,500</p>
+        <p>Modern style watch with water resistant technology.</p>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="cricket2.jpg" alt="Watch">
+        <h3>Casio Elite</h3>
+        <p class="price">Rs. 12,000</p>
+        <p>Durable and stylish watch for everyday use.</p>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="cricket3.jpg" alt="Watch">
+        <h3>Fossil Premium</h3>
+        <p class="price">Rs. 18,500</p>
+        <p>Luxury leather strap with premium finishing.</p>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="cricket1.jpg" alt="Watch">
+        <h3>Rolex Submariner</h3>
+        <p class="price">Rs. 45,000</p>
+        <p>Premium stainless steel luxury watch with elegant design.</p>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="cricket4.JPG" alt="Watch">
+        <h3>Omega Classic</h3>
+        <p class="price">Rs. 38,500</p>
+        <p>Modern style watch with water resistant technology.</p>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="cricket2.jpg" alt="Watch">
+        <h3>Casio Elite</h3>
+        <p class="price">Rs. 12,000</p>
+        <p>Durable and stylish watch for everyday use.</p>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="cricket1.jpg" alt="Watch">
+        <h3>Fossil Premium</h3>
+        <p class="price">Rs. 18,500</p>
+        <p>Luxury leather strap with premium finishing.</p>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="cricket4.JPG" alt="Watch">
+        <h3>Rolex Submariner</h3>
+        <p class="price">Rs. 45,000</p>
+        <p>Premium stainless steel luxury watch with elegant design.</p>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="cricket3.jpg" alt="Watch">
+        <h3>Omega Classic</h3>
+        <p class="price">Rs. 38,500</p>
+        <p>Modern style watch with water resistant technology.</p>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="cricket2.jpg" alt="Watch">
+        <h3>Casio Elite</h3>
+        <p class="price">Rs. 12,000</p>
+        <p>Durable and stylish watch for everyday use.</p>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="cricket1.jpg" alt="Watch">
+        <h3>Fossil Premium</h3>
+        <p class="price">Rs. 18,500</p>
+        <p>Luxury leather strap with premium finishing.</p>
+        <button>Buy Now</button>
+    </div>
+
+</section>
+<div class="scroll-container">
+
+    <div class="card">
+        <img src="cricket3.JPG" alt="Watch">
+        <h3>Omega Classic</h3>
+        <p class="price">Rs. 38,500</p>
+        <p>Modern style watch with water resistant technology.</p>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="cricket2.jpg" alt="Bat">
+        <h3>Cricket Bat Pro</h3>
+        <p class="price">Rs. 12,000</p>
+        <p>Lightweight bat for professional players.</p>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="cricket4.jpg" alt="Ball">
+        <h3>Hard Ball</h3>
+        <p class="price">Rs. 1,500</p>
+        <p>Durable leather ball for match play.</p>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="cricket1.jpg" alt="Gloves">
+        <h3>Batting Gloves</h3>
+        <p class="price">Rs. 2,800</p>
+        <p>Comfortable grip and strong protection.</p>
+        <button>Buy Now</button>
+    </div>
+
+        <div class="card">
+        <img src="cricket2.jpg" alt="Bat">
+        <h3>Cricket Bat Pro</h3>
+        <p class="price">Rs. 12,000</p>
+        <p>Lightweight bat for professional players.</p>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="cricket3.jpg" alt="Ball">
+        <h3>Hard Ball</h3>
+        <p class="price">Rs. 1,500</p>
+        <p>Durable leather ball for match play.</p>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="cricket1.jpg" alt="Gloves">
+        <h3>Batting Gloves</h3>
+        <p class="price">Rs. 2,800</p>
+        <p>Comfortable grip and strong protection.</p>
+        <button>Buy Now</button>
+    </div>
+
+        <div class="card">
+        <img src="cricket2.jpg" alt="Bat">
+        <h3>Cricket Bat Pro</h3>
+        <p class="price">Rs. 12,000</p>
+        <p>Lightweight bat for professional players.</p>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="cricket3.jpg" alt="Ball">
+        <h3>Hard Ball</h3>
+        <p class="price">Rs. 1,500</p>
+        <p>Durable leather ball for match play.</p>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="cricket4.jpg" alt="Gloves">
+        <h3>Batting Gloves</h3>
+        <p class="price">Rs. 2,800</p>
+        <p>Comfortable grip and strong protection.</p>
+        <button>Buy Now</button>
+    </div>
+</div>
+
+        <footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+            <h2>Sports Zone</h2>
+            <p>
+                Your one-stop destination for premium sports gear,
+                equipment, and accessories. Play harder, perform better.
+            </p>
+        </div>
+         <h2 class="heading">Cricket Items</h2> 
+
+ 
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Football</a></li>
+                <li><a href="#">Cricket</a></li>
+                <li><a href="#">Basketball</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-box">
+            <h3>Contact Us</h3>
+            <p>📍 Karachi, Pakistan</p>
+            <p>📞 +92 300 1234567</p>
+            <p>✉ sportszone@gmail.com</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">YouTube</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Sports Zone | All Rights Reserved</p>
+    </div>
+
+</footer>
+</body>
+</html>
